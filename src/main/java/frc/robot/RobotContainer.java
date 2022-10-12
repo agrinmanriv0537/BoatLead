@@ -1,5 +1,7 @@
 package frc.robot;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -17,6 +19,9 @@ public class RobotContainer {
     /* Controllers */
     private final XboxController driver = new XboxController(Constants.driverID);
     private final XboxController operator = new XboxController(Constants.operatorID);
+
+    CANSparkMax frontRightMotor = new CANSparkMax(Constants.Motors.frontRightMotorID,
+        CANSparkMaxLowLevel.MotorType.kBrushless);
 
     // Initialize AutoChooser Sendable
     private final SendableChooser<Command> autoChooser = new SendableChooser<>();
